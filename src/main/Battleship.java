@@ -3,34 +3,40 @@ package main;
 import ships.Destroyer;
 import ships.Ship;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Battleship {
     public static void main(String[] args) {
+        /**
+         *  Próba kiiratás :)
+          */
+        Display display = new Display();                    //
+        Player playerOne = new Player();
+        BoardFactory boardFactory = new BoardFactory();
 
-    Display display = new Display();
-    display.printShipBoard();
+        System.out.println("Az egyes jatekos ures tablaja");
+        playerOne.shipBoard();
+        playerOne.getShipBoard();
+        display.printShipBoard(playerOne.getShipBoard());
 
-    //majd ennek helyet kell keresni
+        System.out.println();
+        System.out.println("Az egyes jatekos tablaja lerakott Destroyer");
+        boardFactory.manualPlacement(playerOne.getShipBoard(), playerOne.getShips());
+        display.printShipBoard(playerOne.getShipBoard());
 
-       Destroyer destroyer = new Destroyer();
-       int starterX = 0;
-       int starterY = 0;
+        System.out.println();
+        System.out.println("Az egyes jatekos hajo listajanak elso 0. eleme");
+        System.out.println(playerOne.getShips().get(0));
 
-       int counter = destroyer.getLength();
+        System.out.println("Az egyes jatekos destroyer első negyzet koordinátája");
+        System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(0).getX());
+        System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(0).getY());
 
-        for (int i = 0; i < counter; i++) {
-            Square coordinates = new Square();
-            coordinates.setY(starterY + i);
-            coordinates.setX(starterX);
-            coordinates.setType(SquareStatus.SHIP);
-            destroyer.getShipCoordinates().add(coordinates);        //lehet, hoyg setter nem is kell?
-        }
-
-
-
-        System.out.println(destroyer.getShipCoordinates().get(0).getCharacter());
+        System.out.println("Az egyes jatekos destroyer masodik negyzet koordinátája");
+        System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(1).getX());
+        System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(1).getY());
 
     }
 

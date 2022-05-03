@@ -6,11 +6,7 @@ public class Display {
      * printShipBoard() kinyomja a képernyőre a táblát
      */
 
-    public void printShipBoard(){
-        Player playerOne = new Player();
-        playerOne.shipBoard();
-
-        Square[][] printBoard = playerOne.getShipBoard();
+    public void printShipBoard(Square[][] printBoard){
 
         System.out.print("  ");
         char c;

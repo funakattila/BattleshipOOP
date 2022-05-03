@@ -1,5 +1,9 @@
 package main;
 
+import ships.Ship;
+
+import java.util.ArrayList;
+
 public class Player {
     /**
      * shipBoard: a játékos hajókat tartalmazó táblája
@@ -15,13 +19,21 @@ public class Player {
         this.shipBoard = shipBoard;
     }
 
+    private ArrayList<Ship> ships = new ArrayList<>();
+
+    public ArrayList<Ship> getShips() {
+        return ships;
+    }
+
+    public void setShips(ArrayList<Ship> ships) {
+        this.ships = ships;
+    }
+
     public void shipBoard(){
         Board board = new Board();
         board.newBoard();
 
         setShipBoard(board.newBoard());
     }
-
-
 
 }
