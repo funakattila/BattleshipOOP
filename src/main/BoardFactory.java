@@ -34,18 +34,18 @@ public class BoardFactory {
     public void manualPlacement(Square[][] shipBoard, ArrayList<Ship> ships) {
 
         Destroyer destroyer = new Destroyer();                      //destroyer példányosítás
-        int starterX = 0;                                           //kezdő koordináták
-        int starterY = 0;
+        int starterX = 3;                                           //kezdő koordináták
+        int starterY = 2;
 
         int counter = destroyer.getLength();                        //a destroyer hosszából számlálót csinálunk
 
         for (int i = 0; i < counter; i++) {                         //legyártja a koordinátákat
             Square coordinates = new Square();                      //létrehozza a Square-eket
-            coordinates.setY(starterY + i);
-            coordinates.setX(starterX);
+            coordinates.setY(starterY);
+            coordinates.setX(starterX + i);
             coordinates.setType(SquareStatus.SHIP);
             destroyer.getShipCoordinates().add(coordinates);        //hozzáadja a destroyer koordinátáit tároló változóhoz
-            shipBoard[starterY + i][starterX] = coordinates;        //hozzáadja a destroyer koordinátáit tároló változóhoz
+            shipBoard[starterY][starterX + i] = coordinates;        //hozzáadja a destroyer koordinátáit tároló változóhoz
         }
 
         ships.add(destroyer);

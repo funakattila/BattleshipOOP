@@ -5,6 +5,7 @@ import ships.Ship;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Battleship {
@@ -12,7 +13,9 @@ public class Battleship {
         /**
          *  Próba kiiratás :)
           */
-        Display display = new Display();                    //
+
+
+        Display display = new Display();
         Player playerOne = new Player();
         BoardFactory boardFactory = new BoardFactory();
 
@@ -26,10 +29,25 @@ public class Battleship {
         boardFactory.manualPlacement(playerOne.getShipBoard(), playerOne.getShips());
         display.printShipBoard(playerOne.getShipBoard());
 
+
+
+
+
+        Input input = new Input();
+        int[] coords = input.convertToCoordinate();                     //a bekért inputot, koordinátává alakítja
+
+        int x = coords[0];
+        int y = coords[1];
+
+        Square[][] testboard = playerOne.getShipBoard();
+        String shot = String.valueOf(testboard[x][y].getType());        //megnézi, hogy a játékos tábláján a lövéssel
+                                                                        // eltalált Square, milyen állapotú
+        System.out.println(shot);
+
+        /*
         System.out.println();
         System.out.println("Az egyes jatekos hajo listajanak elso 0. eleme");
         System.out.println(playerOne.getShips().get(0));
-
         System.out.println("Az egyes jatekos destroyer első negyzet koordinátája");
         System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(0).getX());
         System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(0).getY());
@@ -37,6 +55,11 @@ public class Battleship {
         System.out.println("Az egyes jatekos destroyer masodik negyzet koordinátája");
         System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(1).getX());
         System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(1).getY());
+
+         */
+
+
+
 
     }
 
