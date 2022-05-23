@@ -1,18 +1,16 @@
 package main;
 
 import ships.Destroyer;
-import ships.Ship;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
-public class Battleship {
+public class BattleshipMain {
     public static void main(String[] args) {
         /**
          *  Próba kiiratás :)
           */
+
+        Destroyer destroyer = new Destroyer();
+        System.out.println(destroyer.getLength());;
 
 
         Display display = new Display();
@@ -40,8 +38,8 @@ public class Battleship {
 
         System.out.println();
         System.out.println("Table of <" + playerOneName + "> with ships:");
-        boardFactory.manualPlacement(playerOne.getShipBoard(), playerOne.getShips());
-        display.printShipBoard(playerOne.getShipBoard());
+        playerOne.manualPlacement(playerOne.getShipBoard(), playerOne.getShips());
+        //display.printShipBoard(playerOne.getShipBoard());
 
         Input input = new Input();
         int[] coords = input.convertToCoordinate();                     //a bekért inputot, koordinátává alakítja
@@ -66,7 +64,20 @@ public class Battleship {
         System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(1).getX());
         System.out.println(playerOne.getShips().get(0).getShipCoordinates().get(1).getY());
 
+        System.out.println();
+        System.out.println("Az egyes jatekos hajo listajanak elso 1. eleme");
+        System.out.println(playerOne.getShips().get(1));
+        System.out.println("Az egyes jatekos submarine első negyzet koordinátája");
+        System.out.println(playerOne.getShips().get(1).getShipCoordinates().get(0).getX());
+        System.out.println(playerOne.getShips().get(1).getShipCoordinates().get(0).getY());
+
+        System.out.println("Az egyes jatekos submarine masodik negyzet koordinátája");
+        System.out.println(playerOne.getShips().get(1).getShipCoordinates().get(1).getX());
+        System.out.println(playerOne.getShips().get(1).getShipCoordinates().get(1).getY());
+
          */
+
+
 
 
 

@@ -1,16 +1,11 @@
 package ships;
 
 public class Submarine extends Ship {
-    private final int length = 3;
 
-    public int getLength() {
-            return length;
+    public Submarine() {
+        setLength(3);
+        setType(ShipType.SUBMARINE);
     }
 
-    private final ShipType type = ShipType.SUBMARINE;
-
-    public ShipType getType() {
-            return type;
-    }
 }
 

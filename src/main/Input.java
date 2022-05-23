@@ -35,5 +35,33 @@ public class Input {
         return coordinates;
     }
 
+    public char shipOrientation() {
+
+        char orientation = 'A';
+
+        do {
+
+            String input = newInput("Set the orientation of the ship (horizontal/vertical) press H or V");
+
+            switch (input.toUpperCase()){
+                case "H":
+                    orientation = 'H';
+                break;
+                case "V":
+                    orientation = 'V';
+                break;
+                default:
+                    System.out.println("Please press H or V");
+            }
+        }
+
+
+        while (orientation == 'A');
+
+        return orientation;
+    }
+
+
+
 
 }

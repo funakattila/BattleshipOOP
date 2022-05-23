@@ -18,7 +18,23 @@ public abstract class Ship {
 
     private int length;
 
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
     private ShipType type;
+
+    public ShipType getType() {
+        return type;
+    }
+
+    public void setType(ShipType type) {
+        this.type = type;
+    }
 
 
 
