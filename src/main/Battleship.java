@@ -7,7 +7,7 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import java.util.Scanner;
 public class Battleship {
     public static void main(String[] args) {
         /**
@@ -19,19 +19,29 @@ public class Battleship {
         Player playerOne = new Player();
         BoardFactory boardFactory = new BoardFactory();
 
-        System.out.println("Az egyes jatekos ures tablaja");
+        //Welcome
+        System.out.println("""
+                |||||||||||||||||||||||||||||||||||||||||||||||||||
+                |            Welcome to battleShit();             |
+                |       ATTILA, Funak        ZOLTAN, Farkas       |
+                |                                                 |
+                |       ROLAND, Balog         David, WEISZ        |
+                |                                                 |
+                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^~~~~~~~~~~~~~~~~~~~~~~
+                """);
+
+        Scanner scannerObject = new Scanner(System.in);
+        System.out.println("<Player 1> name is:");
+        String playerOneName = scannerObject.nextLine();
+        System.out.println("Table of <" + playerOneName + ">:");
         playerOne.shipBoard();
         playerOne.getShipBoard();
         display.printShipBoard(playerOne.getShipBoard());
 
         System.out.println();
-        System.out.println("Az egyes jatekos tablaja lerakott Destroyer");
+        System.out.println("Table of <" + playerOneName + "> with ships:");
         boardFactory.manualPlacement(playerOne.getShipBoard(), playerOne.getShips());
         display.printShipBoard(playerOne.getShipBoard());
-
-
-
-
 
         Input input = new Input();
         int[] coords = input.convertToCoordinate();                     //a bekért inputot, koordinátává alakítja
@@ -62,6 +72,8 @@ public class Battleship {
 
 
     }
+
+
 
 
     /**
